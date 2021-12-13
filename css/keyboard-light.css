@@ -1,0 +1,17 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #acc8e5;
+  }
+  button {
+    color: #112a46;
+    background-color: #f1f1f1;
+  }
+  body.dark-theme {
+    background-color: #112a46;
+  }
+  button.background-dark {
+    color: #acc8e5;
+    background-color: #000000;
+  }
+}
+/*# sourceMappingURL=keyboard-light.css.map */

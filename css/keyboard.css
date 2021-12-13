@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[14];
+      grid-template-columns: repeat(14, 1fr);
+  -ms-grid-rows: 1;
+      grid-template-rows: 1;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+  row-gap: 5px;
+}
+
+.space-two-rigth {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 2;
+  grid-column: 11 / span 2;
+  width: inherit;
+}
+
+.space-two-left {
+  width: inherit;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+.enter {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 2;
+  grid-column: 13 / span 2;
+  width: inherit;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 5%;
+  outline: none;
+  border: none;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  font-family: "Roboto", sans-serif;
+}
+
+#switch-container {
+  margin-bottom: 50px;
+  width: inherit;
+  width: 80px;
+  border-radius: 25px;
+  position: relative;
+}
+
+#switch-container span {
+  width: 40px;
+  height: 35px;
+  border: 1px solid #acc8e5;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #acc8e5;
+  top: 10%;
+  left: 1%;
+}
+
+#switch-container span.translate {
+  -webkit-animation: translate 2s ease-in;
+          animation: translate 2s ease-in;
+  right: 1%;
+  left: inherit;
+  background-color: #112a46;
+  border-color: #112a46;
+}
+
+.mr {
+  margin-right: 55px;
+}
+
+.ml {
+  margin-left: 55px;
+}
+
+#capsLock {
+  width: inherit;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+#lock-led {
+  margin-left: 10px;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50px 50px;
+}
+
+#lock-led.light {
+  background-color: #112a46;
+  border: 1px solid #112a46;
+  border-radius: 50px 50px;
+  width: 4px;
+  height: 4px;
+}
+
+form > textarea {
+  background-color: transparent;
+  width: 40rem;
+  height: 10rem;
+  margin-bottom: 50px;
+  border-radius: 50px;
+  outline: none;
+  border: 1px solid #000000;
+  color: #acc8e5;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  resize: none;
+  padding: 20px;
+}
+/*# sourceMappingURL=keyboard.css.map */

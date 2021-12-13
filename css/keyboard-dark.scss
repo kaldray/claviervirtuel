@@ -1,0 +1,26 @@
+$button-background-dark: #000000;
+$background-color-dark: #112a46;
+$text-color-dark: #acc8e5;
+$button-background-light: #f1f1f1;
+$background-color-light: #acc8e5;
+$text-color-light: #112a46;
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $background-color-dark;
+  }
+
+  button {
+    color: $text-color-dark;
+    background-color: $button-background-dark;
+  }
+
+  button.background-light {
+    background-color: $button-background-light;
+    color: $text-color-light;
+  }
+
+  body.light-theme {
+    background-color: $background-color-light;
+  }
+}
