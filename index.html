@@ -22,14 +22,19 @@
         <span id="switch-toggle"></span>
       </button>
       <form action="">
-        <textarea cols="50" wrap="hard" type="textarea"></textarea>
+        <textarea
+          id="textarea"
+          cols="50"
+          wrap="hard"
+          type="textarea"
+        ></textarea>
       </form>
       <div class="row ml">
         <button>1</button><button>2</button> <button>3</button><button>4</button
         ><button>5</button><button>6</button><button>7</button><button>8</button
         ><button>9</button>
         <button>0</button>
-        <button class="space-two-rigth">&#8592;</button>
+        <button id="delete" class="space-two-rigth">&#8592;</button>
       </div>
       <div class="row mr">
         <button class="space-two-left">&#8633;</button>
@@ -61,10 +66,10 @@
         <button>K</button>
         <button>L</button>
         <button>M</button>
-        <button class="enter">Enter</button>
+        <button class="span_deux">Enter</button>
       </div>
       <div class="row mr">
-        <button class="space-two-left">&#8593;</button>
+        <button class="shift space-two-left">&#8593;</button>
         <button>W</button>
         <button>X</button>
         <button>C</button>
@@ -75,7 +80,10 @@
         <button>;</button>
         <button>:</button>
         <button>!</button>
-        <button class="enter">&#8593;</button>
+        <button class="shift span_deux">&#8593;</button>
+      </div>
+      <div class="row">
+        <button value="maj" id="space"></button>
       </div>
     </section>
   </body>

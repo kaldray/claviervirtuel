@@ -21,6 +21,7 @@ section {
   grid-template-rows: 1;
   column-gap: 5px;
   row-gap: 5px;
+  width: 100%;
 }
 
 .space-two-rigth {
@@ -33,7 +34,7 @@ section {
   grid-column: 1 / span 2;
 }
 
-.enter {
+.span_deux {
   grid-column: 13 / span 2;
   width: inherit;
 }
@@ -48,6 +49,7 @@ button {
   font-size: 1.5em;
   font-family: $font;
 }
+
 #switch-container {
   margin-bottom: 50px;
   width: inherit;
@@ -73,6 +75,7 @@ button {
     border-color: #112a46;
   }
 }
+
 .mr {
   margin-right: 55px;
 }
@@ -103,6 +106,12 @@ button {
   height: 4px;
 }
 
+#space {
+  place-self: center;
+  grid-column: 3 / span 9;
+  width: inherit;
+}
+
 form > textarea {
   background-color: transparent;
   width: 40rem;
@@ -115,5 +124,10 @@ form > textarea {
   font-size: 1em;
   font-family: $font;
   resize: none;
+  word-break: break-all;
   padding: 20px;
+}
+
+textarea.light {
+  color: #112a46;
 }
