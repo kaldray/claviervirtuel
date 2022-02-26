@@ -12,6 +12,9 @@ const shift = document.querySelectorAll("#shift");
 const textarea = document.querySelector("textarea");
 const tab = document.querySelector("#tab");
 const enter = document.querySelector("#enter");
+const backSpace = document.querySelector("#delete");
+const shiftLeft = document.querySelector("#shiftLeft");
+const shiftRight = document.querySelector("#shiftRight");
 let capsLockIsActive = false;
 let shiftIsActive = false;
 //#endregion
@@ -25,16 +28,109 @@ keyboardTouch.forEach((elem) => elem.addEventListener("click", writeOnScreen));
 // simulate touch on keyboard
 function simulateKeystrokes() {
   keyboardTouch.forEach((elem) =>
-    elem.addEventListener("mousedown", () => {
+    elem.addEventListener("mousedown", (e) => {
       elem.style.transform = "scale(0.8)";
+      console.log(elem.innerHTML);
     })
   );
+
   keyboardTouch.forEach((elem) =>
     elem.addEventListener("mouseup", () => {
       elem.style.transform = "scale(1)";
     })
   );
 }
+
+function simulateKeystrokesOnKeyboard() {
+  document.addEventListener("keydown", (e) => {
+    keyboardTouch.forEach((elem) => {
+      if (e.key === elem.innerHTML.toLowerCase()) {
+        elem.style.transform = "scale(0.8)";
+      }
+      console.log(elem.innerHTML.charCodeAt());
+      console.log(elem.innerHTML);
+    });
+  });
+  document.addEventListener("keyup", (e) => {
+    keyboardTouch.forEach((elem) => {
+      if (e.key === elem.innerHTML.toLowerCase()) {
+        elem.style.transform = "scale(1)";
+      }
+    });
+  });
+  document.addEventListener("keydown", (e) => {
+    switch (e.code) {
+      case "Space":
+        space.style.transform = "scale(0.8)";
+        break;
+      case "Enter":
+        enter.style.transform = "scale(0.8)";
+        break;
+      // case "CapsLock":
+      //   lockKey.style.transform = "scale(0.8)";
+      //   break;
+      case "Tab":
+        tab.style.transform = "scale(0.8)";
+        break;
+      case "Backspace":
+        backSpace.style.transform = "scale(0.8)";
+        break;
+      case "ShiftLeft":
+        shiftLeft.style.transform = "scale(0.8)";
+        break;
+      case "ShiftRight":
+        shiftRight.style.transform = "scale(0.8)";
+        break;
+    }
+  });
+  document.addEventListener("keyup", (e) => {
+    switch (e.code) {
+      case "Space":
+        space.style.transform = "scale(1)";
+        break;
+      case "Enter":
+        enter.style.transform = "scale(1)";
+        break;
+      // case "CapsLock":
+      //   lockKey.style.transform = "scale(1)";
+      //   break;
+      case "Tab":
+        tab.style.transform = "scale(1)";
+        break;
+      case "Backspace":
+        backSpace.style.transform = "scale(1)";
+        break;
+      case "ShiftLeft":
+        shiftLeft.style.transform = "scale(1)";
+        break;
+      case "ShiftRight":
+        shiftRight.style.transform = "scale(1)";
+        break;
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    switch (e.code) {
+      case "CapsLock":
+        lockLed.classList.toggle("light");
+        break;
+    }
+  });
+  document.addEventListener("keyup", (e) => {
+    switch (e.code) {
+      case "CapsLock":
+        lockLed.classList.toggle("light");
+        break;
+    }
+  });
+}
+
+// function ok() {
+//   document.addEventListener("keypress", (e) => {
+//     console.log(e.key, e.key.charCodeAt(0));
+//     console.log(KeyboardEvent.keyCode);
+//   });
+// }
 
 // active the caps lock button
 function changeCapsLockColor() {
@@ -80,7 +176,10 @@ function writeOnScreen(e) {
     case "capsLock":
       capsLockIsActive = !capsLockIsActive;
       break;
-    case "shift":
+    case "shiftLeft":
+      shiftIsActive = !shiftIsActive;
+      break;
+    case "shiftRight":
       shiftIsActive = !shiftIsActive;
       break;
     case "tab":
@@ -95,10 +194,11 @@ function writeOnScreen(e) {
         text.textContent += String.fromCharCode(asciiToMajLetter);
         shiftIsActive = !shiftIsActive;
       } else {
-        text.textContent += keyboardTouchLetterOrNumber;
+        text.innerHTML += keyboardTouchLetterOrNumber;
       }
       break;
   }
 }
 
 simulateKeystrokes();
+simulateKeystrokesOnKeyboard();

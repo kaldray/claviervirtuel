@@ -137,7 +137,7 @@ button {
   width: inherit;
 }
 
-form > textarea {
+textarea {
   background-color: transparent;
   width: 40rem;
   height: 10rem;
